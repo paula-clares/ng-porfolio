@@ -1,5 +1,5 @@
 {
-  "name": "project-angular-3",
+  "name": "ng-portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:project-angular-3": "node dist/project-angular-3/server/server.mjs"
+    "serve:ssr:ng-portfolio": "node dist/ng-portfolio/server/server.mjs"
   },
   "private": true,
   "dependencies": {
