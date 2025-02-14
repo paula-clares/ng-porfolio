@@ -1,0 +1,110 @@
+.container_input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    input {
+        width: 50%;
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 10px;
+    }
+
+    textarea {
+        width: 50%;
+        height: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 30px;
+        resize: none;
+
+        &::placeholder {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    button {
+        margin-left: 10px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: #2979aa;
+        margin-top: 40px;
+        width: 30%;
+        cursor: pointer;
+    }
+}
+
+.r1-5 {
+    background-color: red;
+}
+
+.r5-10 {
+    background-color: orange;
+}
+
+.r10-15 {
+    background-color: green;
+}
+
+.container_warning {
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    background-color: rgb(150, 19, 19);
+    color: white;
+    text-align: center;
+}
+
+/* .container_task {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3f3f3f;
+    overflow: auto;
+    max-height: 450px;
+    min-height: 450px;
+
+    .task {
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #222;
+        width: 50%;
+        position: relative;
+        color: white;
+
+        .task_delete {
+            position: absolute;
+            top: 15%;
+            cursor: pointer;
+            right: 10px;
+            background-color: red;
+            padding: 5px;
+            border: none;
+            color: white;
+            z-index: 10;
+        }
+
+        .task_check {
+            position: absolute;
+            right: 100px;
+            z-index: 10;
+        }
+
+        .line_through {
+            text-decoration: line-through;
+        }
+    }
+} */

@@ -1,0 +1,33 @@
+<ng-container *ngIf="view">
+    <h1 class="number_task">
+        Número de tareas: {{this.tasks.length}}</h1>
+
+    <h2 class="title">Tareas</h2>
+    <div class="flex">
+        <div class="container_task" [ngStyle]="{'justify-content': tasks.length === 0 ? 'center' : ''}">
+            <div class="task" *ngFor="let task of tasks let i = index">
+                <small>
+                    {{task.id}}
+                </small>
+                <span class="status" [appTaskStatus]="task.completed" *ngIf="!task.completed">
+                    Pendiente
+                </span>
+                <span class="statusTrue" [appTaskStatus]="task.completed" *ngIf="task.completed">
+                    Completa
+                </span>
+                <span [ngClass]="{'line_through': task.completed}">{{ task.title }}</span>
+                <input class="task_check" type="checkbox" [checked]="task.completed" (change)="completeTask(task)">
+                <button class="task_details" (click)="detailsTask(task.id)">Detalles</button>
+                <button class="task_delete" (click)="deleteTask(task.id)"
+                    [appConfirmDelete]="task.title">Eliminar</button>
+                <button class="task_edit" (click)="editTask(task.id)">Editar</button>
+            </div>
+            <span [ngStyle]="{'color': 'white'}" *ngIf="tasks.length === 0">
+                No hay tareas
+            </span>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Aqui van los hijos -->
+<router-outlet></router-outlet>

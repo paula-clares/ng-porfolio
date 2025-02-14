@@ -1,0 +1,33 @@
+.add_button {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #2979aa;
+    color: white;
+    cursor: pointer;
+}
+
+.tabs {
+    width: auto;
+    height: auto;
+    position: absolute;
+    padding: 10px;
+    left: 10px;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        color: gray;
+
+        &.active {
+            color: white;
+        }
+    }
+}

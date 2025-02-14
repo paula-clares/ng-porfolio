@@ -1,0 +1,43 @@
+
+<!-- <p *ngIf="myInput.invalid && (myInput.dirty || myInput.touched)">
+    <span *ngIf="myInput.errors?.['required']">Este campo es requerido</span>
+</p>
+
+<form class="container_input" #myForm="ngForm"(ngSubmit)="sendData(myForm)">
+    <input type="text" placeholder="Ingresar tarea" [(ngModel)]="titleTask" #myInput="ngModel"
+        name="taskTitle" required>
+    <button type="submit" [disabled]="!myInput.valid">Ingresar tarea</button>
+</form>
+
+{{myInput.valid}} -->
+
+
+<div class="container_warning" *ngIf="form.get('title')?.invalid && (form.get('title')?.dirty || form.get('title')?.touched)">
+    <small *ngIf="form.get('title')?.errors?.['required']">
+        El título es requerido
+    </small>
+    <small *ngIf="form.get('title')?.errors?.['maxlength']">
+        El máximo de caracteres es 10
+    </small>
+</div>
+<!-- 
+<h2>Tareas</h2>
+<div class="container_task" [ngStyle]="{'justify-content': tasks.length === 0 ? 'center' : ''}">
+    <div class="task" *ngFor="let task of tasks let i = index">
+        <small>
+            {{i + 1}}
+        </small>
+        <span [ngClass]="{'line_through': task.completed}" appTaskStatus="task.completed">{{ task.title }}</span>
+        <input class="task_check" type="checkbox" [checked]="task.completed" (change)="markTaskCompleted(task)">
+        <button class="task_delete" (click)="delete(task.id)" [appConfirmDelete]="task.title">Eliminar</button>
+    </div>
+    <span [ngStyle]="{'color': 'white'}" *ngIf="tasks.length === 0">
+        No hay tareas
+    </span>
+</div> -->
+
+<form class="container_input" [formGroup]="form" (ngSubmit)="sendTaskTitle()">
+    <input type="text" placeholder="Ingresar tarea" formControlName="title">
+    <textarea placeholder="Ingresar descripción" formControlName="description"></textarea>
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+</form>
