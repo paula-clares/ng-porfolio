@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/ng-porfolio": {},
+    "/ng-porfolio/create": {},
+    "/ng-porfolio/login": {},
+    "/ng-porfolio/tasks": {},
+    "/ng-porfolio/tasks/completed": {},
+    "/ng-porfolio/tasks/deleted": {}
+  }
+}
