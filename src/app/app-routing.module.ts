@@ -43,6 +43,11 @@ const routes: Routes = [
     pathMatch: 'full'
   }, */
   {
+    path: '',
+    redirectTo: 'tasks',
+    pathMatch: 'full'
+  },
+  {
     path: 'edit/:id',
     loadChildren: () => import('../app/modules/edit-task/edit-task.module')
       .then(m => m.EditTaskModule)
