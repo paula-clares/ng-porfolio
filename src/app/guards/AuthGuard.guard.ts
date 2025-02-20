@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
         if (this.service.isLoggedIn()) {
             return true
         } else {
-            alert("No ha sido posible iniciar sesión")
+            alert("Log in could not be completed")
             this.router.navigate(['/login'])
             return false
         }

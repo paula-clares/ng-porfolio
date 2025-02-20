@@ -1,8 +1,8 @@
 <ng-container *ngIf="view">
     <h1 class="number_task">
-        Número de tareas: {{this.tasks.length}}</h1>
+        Number of tasks: {{this.tasks.length}}</h1>
 
-    <h2 class="title">Tareas</h2>
+    <h2 class="title" i18n>Tasks</h2>
     <div class="flex">
         <div class="container_task" [ngStyle]="{'justify-content': tasks.length === 0 ? 'center' : ''}">
             <div class="task" *ngFor="let task of tasks let i = index">
@@ -10,20 +10,20 @@
                     {{task.id}}
                 </small>
                 <span class="status" [appTaskStatus]="task.completed" *ngIf="!task.completed">
-                    Pendiente
+                    Pending
                 </span>
                 <span class="statusTrue" [appTaskStatus]="task.completed" *ngIf="task.completed">
-                    Completa
+                    Completed
                 </span>
                 <span [ngClass]="{'line_through': task.completed}">{{ task.title }}</span>
                 <input class="task_check" type="checkbox" [checked]="task.completed" (change)="completeTask(task)">
-                <button class="task_details" (click)="detailsTask(task.id)">Detalles</button>
+                <button class="task_details" (click)="detailsTask(task.id)">Details</button>
                 <button class="task_delete" (click)="deleteTask(task.id)"
-                    [appConfirmDelete]="task.title">Eliminar</button>
-                <button class="task_edit" (click)="editTask(task.id)">Editar</button>
+                    [appConfirmDelete]="task.title">Delete</button>
+                <button class="task_edit" (click)="editTask(task.id)">Edit</button>
             </div>
             <span [ngStyle]="{'color': 'white'}" *ngIf="tasks.length === 0">
-                No hay tareas
+                There are no tasks
             </span>
         </div>
     </div>

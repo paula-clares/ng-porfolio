@@ -15,10 +15,10 @@ export class AppConfirmDeleteDirective {
         event.preventDefault()
         event.stopPropagation()
 
-        const confirmed = confirm(`¿Quieres eliminar la tarea ${this.taskTitle}?`)
+        const confirmed = confirm(`Do you want to delete the task ${this.taskTitle}?`)
         
         if (confirmed === true) {
-            alert(`Eliminada la tarea ${this.taskTitle}`)
+            alert(`Task ${this.taskTitle} deleted`)
             /* Hacer que no la elimine, actualmente lo hace igual */
         }
     }

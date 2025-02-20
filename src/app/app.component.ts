@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent implements OnInit, OnDestroy {
+  title!: string;
   cambio: boolean = false;
   tasks: Task[] = [];
   tasksUpload: Task[] = [];
