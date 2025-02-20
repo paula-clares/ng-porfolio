@@ -14,10 +14,10 @@
 
 <div class="container_warning" *ngIf="form.get('title')?.invalid && (form.get('title')?.dirty || form.get('title')?.touched)">
     <small *ngIf="form.get('title')?.errors?.['required']">
-        El título es requerido
+        Title required
     </small>
     <small *ngIf="form.get('title')?.errors?.['maxlength']">
-        El máximo de caracteres es 10
+        The maximum number of characters is 10
     </small>
 </div>
 <!-- 

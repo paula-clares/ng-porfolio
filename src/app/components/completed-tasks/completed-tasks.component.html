@@ -8,15 +8,15 @@
                 {{task.id}}
             </small>
             <span class="status" [appTaskStatus]="task.completed" *ngIf="!task.completed">
-                Pendiente
+                Pending
             </span>
             <span class="statusTrue" [appTaskStatus]="task.completed" *ngIf="task.completed">
-                Completa
+                Completed
             </span>
             <span [ngClass]="{'line_through': task.completed}">{{ task.title }}</span>
         </div>
         <span [ngStyle]="{'color': 'white'}" *ngIf="tasksCompleted.length === 0">
-            No hay tareas completadas
+            There are no completed tasks yet
         </span>
     </div>
 </div>

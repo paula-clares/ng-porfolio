@@ -10,12 +10,12 @@
 <ng-container *ngIf="view">
     
     <nav class="tabs">
-        <a routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Todas</a>
-        <a routerLink="/tasks/completed" routerLinkActive="active">Completadas</a>
-        <a routerLink="/tasks/deleted" routerLinkActive="active">Eliminadas</a>
+        <a routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All</a>
+        <a routerLink="/tasks/completed" routerLinkActive="active">Completed</a>
+        <a routerLink="/tasks/deleted" routerLinkActive="active">Deleted</a>
     </nav>
     <!-- <button *ngIf="!open" (click)="openTask()" class="add_button">Agregar tarea</button> -->
-    <button (click)="openTask()" class="add_button">Agregar tarea</button>
+    <button (click)="openTask()" class="add_button">Add task</button>
     
 </ng-container>
 

@@ -12,7 +12,7 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
     constructor(private service: TasksService, private router: Router) { }
 
     canDeactivate(): boolean {
-        const confirmDeactivate = window.confirm('¿Seguro que quieres salir de esta página?')
+        const confirmDeactivate = window.confirm('Are you sure you want to leave this page?')
         if (confirmDeactivate === true) {
             setTimeout(() => {
                 this.router.navigate(['/login'])

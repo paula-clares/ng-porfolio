@@ -12,7 +12,7 @@ export class AuthGuardChild implements CanActivateChild {
         if (this.service.authRouteChild()) {
             return true
         } else {
-            alert("No ha sido posible acceder a esta ruta")
+            alert("It was not possible to access this route")
             setTimeout(() => {
                 this.router.navigate(['/login'])
             }, 1500);
