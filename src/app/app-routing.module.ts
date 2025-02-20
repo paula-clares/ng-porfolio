@@ -37,11 +37,11 @@ const routes: Routes = [
     loadChildren: () => import('../app/modules/add-task/add-task.module')
       .then(m => m.AddTaskModule)
   },
-  {
+  /* {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  },
+  }, */
   {
     path: 'edit/:id',
     loadChildren: () => import('../app/modules/edit-task/edit-task.module')
