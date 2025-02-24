@@ -14,6 +14,7 @@
                 Completa
             </span>
             <span [ngClass]="{'line_through': task.completed}">{{ task.title }}</span>
+            <app-details-button [taskId]="task.id"></app-details-button>
         </div>
         <span [ngStyle]="{'color': 'white'}" *ngIf="tasksCompleted.length === 0">
             No hay tareas completadas

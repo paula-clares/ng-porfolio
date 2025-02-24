@@ -12,6 +12,7 @@ import { CompletedTasksComponent } from './components/completed-tasks/completed-
 import { DetailsTasksComponent } from './components/details-tasks/details-tasks.component';
 import { DeletedTasksComponent } from './components/deleted-tasks/deleted-tasks.component';
 import { LoginComponent } from './components/login/login.component';
+import { DetailsButtonComponent } from './components/details-button/details-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     CompletedTasksComponent,
     DetailsTasksComponent,
     DeletedTasksComponent,
-    LoginComponent
+    LoginComponent,
+    DetailsButtonComponent
   ],
   imports: [
     BrowserModule,
