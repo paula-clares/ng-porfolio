@@ -17,7 +17,7 @@
                 </span>
                 <span [ngClass]="{'line_through': task.completed}">{{ task.title }}</span>
                 <input class="task_check" type="checkbox" [checked]="task.completed" (change)="completeTask(task)">
-                <button class="task_details" (click)="detailsTask(task.id)">Detalles</button>
+                <app-details-button [taskId]="task.id"></app-details-button>
                 <button class="task_delete" (click)="deleteTask(task.id)"
                     [appConfirmDelete]="task.title">Eliminar</button>
                 <button class="task_edit" (click)="editTask(task.id)">Editar</button>

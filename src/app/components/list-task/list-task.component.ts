@@ -51,9 +51,4 @@ export class ListTaskComponent {
   editTask(id: number): void {
     this.router.navigate([`/edit/${id}`])
   }
-
-  detailsTask(id: number): void {
-    /* Colocar ruta completa siempre que sea subruta de otra, por eso añadimos "tasks" */
-    this.router.navigate([`tasks/details/${id}`])
-  }
 }
