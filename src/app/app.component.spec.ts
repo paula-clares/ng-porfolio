@@ -26,7 +26,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ng-portfolio');
   }); */
 
-  it('should render button', () => {
+  it('should render add task button', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
