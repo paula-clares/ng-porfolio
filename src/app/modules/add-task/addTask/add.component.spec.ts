@@ -13,7 +13,7 @@ describe('AddComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
       declarations: [AddComponent],
-      providers: [TasksService]
+      providers: [TasksService] /* Still works without this */
     })
       .compileComponents();
 
@@ -63,25 +63,26 @@ describe('AddComponent', () => {
   });
 
   it('submit success', () => {
-    spyOn(tasksService, 'addTask');
-    expect(tasksService).toBeTruthy();
+    let tasksCount = tasksService.tasks.length;
+    spyOn(tasksService, 'addTask').and.callThrough();
     let componentForm = component.form;
     componentForm.setValue({
       title: 'title',
       description: 'description'
     });
+
     expect(componentForm.valid).toEqual(true);
 
-    spyOn(component, 'sendTaskTitle');
+    spyOn(component, 'sendTaskTitle').and.callThrough();
     let submitButton: HTMLButtonElement = fixture.debugElement.nativeElement.querySelector('button[type=submit]');
     fixture.detectChanges();
     expect(submitButton.disabled).toBe(false);
     submitButton.click();
 
     expect(component.sendTaskTitle).toHaveBeenCalledTimes(1);
-    
+
     /* Check newly created task is not completed and is correctly created */
     expect(tasksService.addTask).toHaveBeenCalledTimes(1);
-    expect(tasksService.getTasks().length).toEqual(1);
+    expect(tasksService.getTasks().length).toEqual(tasksCount + 1);
   });
 });
