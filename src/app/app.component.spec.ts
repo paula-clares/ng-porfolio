@@ -1,8 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let compiled: HTMLElement;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -12,6 +16,11 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    compiled = fixture.nativeElement as HTMLElement;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
@@ -20,16 +29,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-portfolio'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-portfolio');
+  it('should render add task button', () => {
+    expect(compiled.querySelector('button.add_button')?.textContent).toContain('Agregar tarea');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ng-portfolio');
+  it('add task button goes to add task page', () => {
+    spyOn(component, 'openTask');
+    let button: HTMLAnchorElement | null = compiled.querySelector('button.add_button');
+
+    button?.click();
+    expect(component.openTask).toHaveBeenCalledTimes(1);
   });
 });

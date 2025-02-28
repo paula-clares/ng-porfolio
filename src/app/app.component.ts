@@ -2,7 +2,6 @@ import { AfterContentInit, AfterViewInit, Component, DoCheck, OnDestroy, OnInit 
 import { Task } from './models/task.interface';
 import { TasksService } from './services/tasks.service';
 import { ApiService } from './services/api.service';
-import { error } from 'console';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
