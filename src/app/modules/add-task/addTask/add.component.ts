@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
                 completed: false
             };
             this.service.addTask(newTask)
-            this.router.navigate(['/'])
+            this.router.navigate(['/tasks'])
             this.form.reset()
         }
     }
