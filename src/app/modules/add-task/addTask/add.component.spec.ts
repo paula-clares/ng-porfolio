@@ -3,11 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddComponent } from './add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TasksService } from '../../../services/tasks.service';
+import { Router } from '@angular/router';
 
 describe('AddComponent', () => {
   let component: AddComponent;
   let fixture: ComponentFixture<AddComponent>;
   let tasksService: TasksService;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,6 +20,7 @@ describe('AddComponent', () => {
       .compileComponents();
 
     tasksService = TestBed.inject(TasksService);
+    router = TestBed.inject(Router);
     fixture = TestBed.createComponent(AddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -65,6 +68,7 @@ describe('AddComponent', () => {
   it('submit success', () => {
     let tasksCount = tasksService.tasks.length;
     spyOn(tasksService, 'addTask').and.callThrough();
+    spyOn(router, 'navigate').and.callThrough();
     let componentForm = component.form;
     componentForm.setValue({
       title: 'title',
@@ -84,5 +88,9 @@ describe('AddComponent', () => {
     /* Check newly created task is not completed and is correctly created */
     expect(tasksService.addTask).toHaveBeenCalledTimes(1);
     expect(tasksService.getTasks().length).toEqual(tasksCount + 1);
+    expect(tasksService.getTasks().pop()?.completed).toBeFalse;
+
+    /* Check redirection to list */
+    expect(router.navigate).toHaveBeenCalledWith(['/tasks']);
   });
 });
